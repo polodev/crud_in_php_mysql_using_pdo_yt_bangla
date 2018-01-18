@@ -3,7 +3,20 @@
 
 ## table create and database
 Started mysql server. Login to mysql and create a database.      
-connect with database and create table using php. today we connect php with mysql using pdo(PHP data object)      
+connect with database and create table using php. today we connect php with mysql using pdo(PHP data object)         
+
+~~~php
+
+$dsn = 'mysql:host=localhost;dbname=school';
+
+$con = new PDO($dsn, 'root', '');
+$con->query("create table teachers (
+  id int(11) auto_increment primary key,
+  name varchar(30) not null,
+  email varchar(30)
+)");
+~~~
+
 
 ## Create data
 make a html form. In this video I am using same page as form action. In such case, we have to check whether form is submitted or not using `isset` and any other helper functions. Today we've used isset function. Once we extract from data using `$_POST` super global we connect with database and insert form data to database     
